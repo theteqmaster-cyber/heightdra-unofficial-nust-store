@@ -1,0 +1,134 @@
+.container {
+  min-height: 100vh;
+  padding: 0;
+  background: var(--bg-primary);
+  position: relative;
+}
+
+.watermark {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 500px;
+  background: url('/nust-logo.png') no-repeat center;
+  background-size: contain;
+  opacity: 0.05;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  padding: 40px;
+}
+
+.presentation {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-bottom: 100px;
+  position: relative;
+  z-index: 2;
+}
+
+.section {
+  padding: 80px 40px;
+  border-radius: 32px;
+  margin-bottom: 40px;
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s;
+}
+
+.section:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.section h2 {
+  font-size: 2.2rem;
+  color: var(--accent-primary);
+  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.section p {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+.featureList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.featureItem {
+  padding: 15px;
+  background: rgba(255,255,255,0.03);
+  border-radius: 12px;
+  font-size: 1.1rem;
+}
+
+.playBtnPrimary {
+  background: var(--nust-accent);
+  color: #000 !important;
+  padding: 22px 70px;
+  border-radius: 40px;
+  font-size: 2.2rem;
+  font-weight: 900;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 40px;
+  box-shadow: 0 0 40px rgba(252, 209, 22, 0.4);
+  transition: all 0.3s;
+}
+
+.playBtnPrimary:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 60px rgba(252, 209, 22, 0.6);
+}
+
+.smallPlay {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--accent-primary);
+  color: white !important;
+  padding: 12px 35px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  margin-top: 20px;
+  display: inline-block;
+  transition: all 0.3s;
+}
+
+.smallPlay:hover {
+  background: var(--accent-primary);
+  color: black !important;
+}
+
+.warningSection {
+  border: 2px solid #ff4d4d33;
+  background: rgba(255, 77, 77, 0.05);
+}
+
+@media (max-width: 768px) {
+  .hero h1 { font-size: 3rem !important; }
+  .section { padding: 40px 20px; }
+  .section h2 { font-size: 1.8rem; }
+  .playBtnPrimary { font-size: 1.5rem; padding: 15px 40px; }
+}

@@ -1,0 +1,84 @@
+.container {
+  min-height: 100vh;
+  padding: 50px 20px 100px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.gameGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.gameCard {
+  padding: 30px;
+  border-radius: 28px;
+  text-decoration: none;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 1px solid var(--panel-border);
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+}
+
+.gameCard:hover {
+  transform: translateY(-12px) scale(1.02);
+  border-color: var(--accent-primary);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.6), 0 0 20px rgba(102, 252, 241, 0.2);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.iconWrapper {
+  width: 70px;
+  height: 70px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  margin-bottom: 10px;
+  transition: transform 0.3s;
+}
+
+.gameCard:hover .iconWrapper {
+  transform: rotate(10deg);
+}
+
+.goldLining {
+  border: 1px solid rgba(252, 209, 22, 0.3) !important;
+  box-shadow: 0 0 15px rgba(252, 209, 22, 0.1);
+  background: linear-gradient(135deg, rgba(252, 209, 22, 0.05), rgba(0,0,0,0.4)) !important;
+}
+
+.goldLining:hover {
+  border-color: var(--nust-accent) !important;
+  box-shadow: 0 0 30px rgba(252, 209, 22, 0.3), 0 20px 40px rgba(0,0,0,0.6);
+}
+
+.levelProgress {
+  height: 6px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 3px;
+  margin: 20px 0 10px;
+  overflow: hidden;
+}
+
+.progressBar {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 1s ease-in-out;
+}
+
+@media (max-width: 768px) {
+  .gameGrid {
+    grid-template-columns: 1fr;
+  }
+}
